@@ -21,7 +21,8 @@ from argparse import ArgumentParser
 from collections import Mapping
 from functools import partial
 
-STATUS_FILE = "/tmp/aprs_status.dat"
+TMPDIR = os.getenv('XDG_RUNTIME_DIR', '/tmp')
+STATUS_FILE = os.path.join(TMPDIR, "aprs_status.dat")
 
 LOADAVG_FILE = "/proc/loadavg"
 MEMINFO_FILE = "/proc/meminfo"
